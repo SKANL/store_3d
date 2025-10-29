@@ -520,7 +520,7 @@ class _GridProductTile extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+                padding: const EdgeInsets.fromLTRB(8, 4, 8, 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -530,7 +530,7 @@ class _GridProductTile extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
                     ),
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 1),
                     Text(
                       product.title,
                       maxLines: 1,
@@ -540,7 +540,7 @@ class _GridProductTile extends StatelessWidget {
                         height: 1.2,
                       ),
                     ),
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 1),
                     Text(
                       'Envío gratis FULL',
                       style: theme.textTheme.bodySmall?.copyWith(
@@ -551,17 +551,23 @@ class _GridProductTile extends StatelessWidget {
                     const Spacer(),
                     Row(
                       children: [
-                        Icon(Icons.star, size: 16, color: cs.secondary),
-                        const SizedBox(width: 4),
+                        Icon(Icons.star, size: 14, color: cs.secondary),
+                        const SizedBox(width: 3),
                         Text(
                           '4.8',
-                          style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 11,
+                          ),
                         ),
-                        const SizedBox(width: 4),
+                        const SizedBox(width: 3),
                         Expanded(
                           child: Text(
                             '+1k vendidos',
-                            style: theme.textTheme.bodySmall?.copyWith(color: cs.outline),
+                            style: theme.textTheme.bodySmall?.copyWith(
+                              color: cs.outline,
+                              fontSize: 11,
+                            ),
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
@@ -569,11 +575,12 @@ class _GridProductTile extends StatelessWidget {
                           onPressed: onAddToCart,
                           style: IconButton.styleFrom(
                             padding: EdgeInsets.zero,
-                            minimumSize: const Size(34, 34),
+                            minimumSize: const Size(30, 30),
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                             backgroundColor: cs.surfaceContainerHighest,
                             foregroundColor: cs.primary,
                           ),
-                          icon: const Icon(Icons.add_shopping_cart_outlined, size: 18),
+                          icon: const Icon(Icons.add_shopping_cart_outlined, size: 15),
                         ),
                       ],
                     ),
